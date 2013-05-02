@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := device/motorola/msm8960-common
+LOCAL_PATH := device/moto/msm8960-common
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -69,10 +69,9 @@ PRODUCT_PACKAGES += \
 #misc
 PRODUCT_PACKAGES += \
 	WCNSS_qcom_wlan_nv.bin \
-    lights.msm8960 \
 	tcpdump \
-    Torch \
-    Stk
+	Torch \
+	libxml2
 
 # Charger
 PRODUCT_PACKAGES += charger charger_res_images
@@ -82,16 +81,15 @@ PRODUCT_PACKAGES += qrngd
 
 #bluetooth
 PRODUCT_PACKAGES += \
-            hciconfig \
-            hcitool
+	hciconfig \
+	hcitool
 
 # HAL
 PRODUCT_PACKAGES += \
-    copybit.msm8960 \
-    gralloc.msm8960 \
-    hwcomposer.default \
-    hwcomposer.msm8960 \
-    power.msm8960
+	copybit.msm8960 \
+	gralloc.msm8960 \
+	hwcomposer.msm8960 \
+	power.msm8960
 
 # NFC Support
 # NFCEE access control
@@ -102,11 +100,12 @@ else
 endif
 PRODUCT_COPY_FILES += $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 PRODUCT_PACKAGES += \
-    libnfc \
-    libnfc_jni \
-    Nfc \
-    Tag \
-    com.android.nfc_extras
+	nfc.msm8960 \
+	libnfc \
+	libnfc_jni \
+	Nfc \
+	Tag \
+	com.android.nfc_extras
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -119,7 +118,7 @@ PRODUCT_PACKAGES += \
     MagicSmokeWallpapers \
     HoloSpiralWallpaper \
     VisualizationWallpapers \
-    librs_jni \
+    librs_jni
 
 # keylayouts
 PRODUCT_COPY_FILES += \
@@ -129,8 +128,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/keylayout/cyttsp-i2c.kl:system/usr/keylayout/cyttsp-i2c.kl \
 	$(LOCAL_PATH)/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
 	$(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-	$(LOCAL_PATH)/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
-	$(LOCAL_PATH)/keylayout/keypad_8960_liquid.kl:system/usr/keylayout/keypad_8960_liquid.kl \
 	$(LOCAL_PATH)/keylayout/philips_remote_ir.kl:system/usr/keylayout/philips_remote_ir.kl \
 	$(LOCAL_PATH)/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
 	$(LOCAL_PATH)/keylayout/samsung_remote_ir.kl:system/usr/keylayout/samsung_remote_ir.kl \
@@ -142,7 +139,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
 	$(LOCAL_PATH)/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl \
 	$(LOCAL_PATH)/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
-	$(LOCAL_PATH)/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl \
+	$(LOCAL_PATH)/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl
 
 # Keychars
 PRODUCT_COPY_FILES += \
